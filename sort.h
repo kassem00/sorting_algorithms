@@ -3,6 +3,8 @@
 #define BUB_TRUE 1
 #define BUB_FALSE 0
 #include <stddef.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
  * struct listint_s - Doubly linked list node

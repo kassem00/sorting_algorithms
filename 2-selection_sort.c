@@ -1,4 +1,6 @@
 #include "sort.h"
+
+
 /**
  * selection_sort - sorts an array of integers in ascending order,
  * using the selection algorithm
@@ -10,10 +12,12 @@ void selection_sort(int *array, size_t size)
 {
 	size_t i = 0;
 
-	for (i = 0; i < size; i++)
+	if (array == NULL)
+		return;
+
+	for (i = 0; i < size - 2; i++)
 	{
-		swap_at_index(array, find_min(array, size, i), (int)i);
-		print_array(array, size);
+		find_min(array, size, i);
 	}
 }
 
@@ -46,10 +50,16 @@ int find_min(int *array, size_t size, int index)
 	int i;
 
 	for (i = index; i < (int)size; i++)
-	{
 		if (array[i] < array[min_index])
-			min_index = i;
-	}
+		{
+			/*printf("\n[%d] [%d]min index \n",array[i] , array[min_index]);
+			*/min_index = i;
+		}
 
-	return (min_index);
+	swap_at_index(array, min_index, index);
+
+	if (array[min_index] > array[index])
+		print_array(array, size);
+
+	return 0;
 }
