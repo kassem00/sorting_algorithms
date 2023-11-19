@@ -52,8 +52,7 @@ int find_min(int *array, size_t size, int index)
 	for (i = index; i < (int)size; i++)
 		if (array[i] < array[min_index])
 		{
-			/*printf("\n[%d] [%d]min index \n",array[i] , array[min_index]);
-			*/min_index = i;
+			min_index = i;
 		}
 
 	swap_at_index(array, min_index, index);
@@ -61,5 +60,5 @@ int find_min(int *array, size_t size, int index)
 	if (array[min_index] > array[index])
 		print_array(array, size);
 
-	return 0;
+	return (0);
 }
